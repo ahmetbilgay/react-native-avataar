@@ -1,6 +1,5 @@
 # react-native-avataar
 
-
 This package provides a quick and straightforward solution for delivering personalized avatars to your users.
 
 ## Features
@@ -10,7 +9,7 @@ This package provides a quick and straightforward solution for delivering person
 - **User-Friendly:** Provides a simple and user-friendly API for quickly generating avatars.
 - **React Native Compatible:** Includes a React Native component that can be easily integrated into your projects.
 
-## How to Use
+## Install and Setup
 
 1. First, add the npm package to your project:
 
@@ -18,14 +17,56 @@ This package provides a quick and straightforward solution for delivering person
    npm install react-native-avataar
    yarn add react-native-avataar
    ```
+
 2. Install react-native-svg :
 
    ```bash
    npm install react-native-svg
    yarn add react-native-svg
    ```
+
 3. For ios:
 
    ```bash
    cd ios && pod install
-   ```   
+   ```
+
+## How to use
+
+```
+const [avataar,setAvataar] = useState({
+    skinValue:"",
+    clothesValue:"",
+    faceValues:{
+       mouth:"",
+       eyes:"",
+       eyeBrow:"",
+    },
+    topValues:{
+       top:"",
+       accessories:"",
+       facialHairValue:"",
+       facialHairColorValue:"",
+       hairColorValue:"",
+    }
+})
+<Avataar
+    width={'180px'}
+    height={'180px'}
+    circle={true}
+    clothesValue={avataar.clothesValue}
+    faceValues={{
+         mountValue: avataar.faceValues.mouth,
+         eyesValue: avataar.faceValues.eyes,
+         eyeBrowValue: avataar.faceValues.eyeBrow,
+    }}
+    skinValue={avataar.skinValue}
+    topValues={{
+         topValue: avataar.topValues.top,
+         accessoriesValue: avataar.topValues.accessories,
+         facialHairValue: avataar.topValues.facialHairValue,
+         facialHairColorValue: avataar.topValues.facialHairColorValue,
+         hairColorValue: avataar.topValues.hairColorValue,
+    }}
+/>
+```
