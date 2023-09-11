@@ -1,7 +1,7 @@
-import React from 'react';
-import {G, Rect} from 'react-native-svg';
+import React from "react";
+import { G, Rect } from "react-native-svg";
 
-const Skin = ({maskID, color}) => {
+const Skin = ({ maskID, color }) => {
   return (
     <G id="skin" mask={`url(#${maskID})`} fill={color}>
       <G transform="translate(0.000000, 0.000000)" id="Color">

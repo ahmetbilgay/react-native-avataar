@@ -1,13 +1,8 @@
-import React from 'react';
-import {uniqueId} from 'lodash';
-import {Svg, Defs, Circle, Path, G, Mask, Use, Rect} from 'react-native-svg';
-
-import Accessories from './top/accessories';
-import Clothes from './clothes';
-import Face from './face';
-import Skin from './Skin';
-import Top from './top';
-import AvatarProvider from './context';
+import React from "react";
+import { uniqueId } from "lodash";
+import { Svg, Defs, Circle, Path, G, Mask, Use, Rect } from "react-native-svg";
+import { Face, Clothes, Skin, Top, AvatarProvider } from "./src";
+import Accessories from "./src/top/accessories";
 
 const Avatar = ({
   width,
@@ -18,12 +13,12 @@ const Avatar = ({
   topValues,
   circle,
 }) => {
-  const path1 = uniqueId('react-path-');
-  const path2 = uniqueId('react-path-');
-  const path3 = uniqueId('react-path-');
-  const mask1 = uniqueId('react-mask-');
-  const mask2 = uniqueId('react-mask-');
-  const mask3 = uniqueId('react-mask-');
+  const path1 = uniqueId("react-path-");
+  const path2 = uniqueId("react-path-");
+  const path3 = uniqueId("react-path-");
+  const mask1 = uniqueId("react-mask-");
+  const mask2 = uniqueId("react-mask-");
+  const mask3 = uniqueId("react-mask-");
 
   return (
     <AvatarProvider>
@@ -44,47 +39,52 @@ const Avatar = ({
           stroke="none"
           strokeWidth="1"
           fill="none"
-          fillRule="evenodd">
+          fillRule="evenodd"
+        >
           <G
             transform="translate(-825.000000, -1100.000000)"
-            id="Avataaar/Circle">
+            id="Avataaar/Circle"
+          >
             <G transform="translate(825.000000, 1100.000000)">
               {circle && (
                 <G
                   id="Circle"
                   strokeWidth="1"
                   fillRule="evenodd"
-                  transform="translate(12.000000, 40.000000)">
+                  transform="translate(12.000000, 40.000000)"
+                >
                   <Mask id={mask1} fill="white">
-                    <Use xlinkHref={'#' + path1} />
+                    <Use xlinkHref={"#" + path1} />
                   </Mask>
                   <Use
                     id="Circle-Background"
                     fill="#E6E6E6"
-                    xlinkHref={'#' + path1}
+                    xlinkHref={"#" + path1}
                   />
                   <G
                     id="Color/Palette/Blue-01"
-                    mask={'url(#' + mask1 + ')'}
-                    fill="#65C9FF">
+                    mask={"url(#" + mask1 + ")"}
+                    fill="#65C9FF"
+                  >
                     <Rect id="🖍Color" x="0" y="0" width="240" height="240" />
                   </G>
                 </G>
               )}
               <Mask id={mask2} fill="white">
-                <Use xlinkHref={'#' + path2} />
+                <Use xlinkHref={"#" + path2} />
               </Mask>
               <G id="Mask" />
               <G
                 id="Avataaar"
                 strokeWidth="1"
                 fillRule="evenodd"
-                mask={'url(#' + mask2 + ')'}>
+                mask={"url(#" + mask2 + ")"}
+              >
                 <G id="Body" transform="translate(32.000000, 36.000000)">
                   <Mask id={mask3} fill="white">
-                    <Use xlinkHref={'#' + path3} />
+                    <Use xlinkHref={"#" + path3} />
                   </Mask>
-                  <Use fill="#D0C6AC" xlinkHref={'#' + path3} />
+                  <Use fill="#D0C6AC" xlinkHref={"#" + path3} />
 
                   <Skin color={skinValue} maskID={mask3} />
 
@@ -93,7 +93,7 @@ const Avatar = ({
                     id="Neck-Shadow"
                     fillOpacity="0.100000001"
                     fill="#000000"
-                    mask={'url(#' + mask3 + ')'}
+                    mask={"url(#" + mask3 + ")"}
                   />
                 </G>
                 <Clothes value={clothesValue} />
@@ -106,7 +106,8 @@ const Avatar = ({
                   facial={topValues.facialHairValue}
                   facialColor={topValues.facialHairColorValue}
                   facialHairColorValue={topValues.hairColorValue}
-                  value={topValues.topValue}>
+                  value={topValues.topValue}
+                >
                   <Accessories value={topValues.accessoriesValue} />
                 </Top>
               </G>
