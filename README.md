@@ -34,6 +34,10 @@ This package provides a quick and straightforward solution for delivering person
 ## How to use
 
 ```
+import Avataar from 'react-native-avataar';
+```
+
+```
 const [avataar,setAvataar] = useState({
     skinValue:"",
     clothesValue:"",
@@ -50,6 +54,8 @@ const [avataar,setAvataar] = useState({
        hairColorValue:"",
     }
 })
+
+
 <Avataar
     width={'180px'}
     height={'180px'}
@@ -70,3 +76,12 @@ const [avataar,setAvataar] = useState({
     }}
 />
 ```
+
+| Prop           | Type    | Description                                                                                                                          |
+|----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `width`        | string  | The width for avatar                                                                                                                 |
+| `height`       | string  | The height for avatar                                                                                                                |
+| `circle`       | boolean | Convert avatar to circle format.                                                                                                     |
+| `clothesValue` | string  | "blazerShirt", "blazerSweater", "collarSweater", "graphicShirt", "hoddie", "overall", "shirtCrewNeck", "shirtScoopNeck","shirtVNeck" |
+| `faceValues`   | object  |                                                                                                                                      |
+
